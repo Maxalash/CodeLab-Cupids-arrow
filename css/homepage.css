@@ -1,0 +1,25 @@
+
+#header{
+    min-height: 550px;
+	background-size: cover;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	box-shadow:0 -300px 100px -100px white inset;
+}
+
+#main{
+	box-shadow:0 120px 30px -30px white inset;
+	height:1500px;
+	width:100%;
+	background-color: #fcd9fb;
+}
+#footer{
+	height:100px;
+	width:98.7%;
+	background-color: white;
+	box-shadow: 0 -10px 20px white;
+	bottom: 0;
+	right:0;
+	left:0;
+}
