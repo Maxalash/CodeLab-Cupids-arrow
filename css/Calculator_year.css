@@ -1,4 +1,5 @@
 .calc{
+	box-shadow: 0 -10px 20px white;
 	margin: 0 auto;
 	padding: 6vh;
 	font-style: normal;
@@ -20,16 +21,16 @@
 	vertical-align: middle;
 	text-align: left;
 	text-transform: uppercase;
-	font-size: 3vw;
+	font-size: 1vw;
 	padding-bottom: 0px;
 }
-input, select {
+div.field input, select {
 	-webkit-appearance: none;
 	-moz-appearance: none;
 	border: 0px solid #3f424c;
 	width: 50%;
 	margin-bottom: 0;
-	height: 7vw;
+	height: 5vw;
 	float: none;
 	clear: both;
 	-moz-box-sizing: border-box;
@@ -42,7 +43,7 @@ input, select {
 	border-radius: 0px;
 	background: #FFF;
 	color: #7c7c7c;
-	font-size: 2vw;
+	font-size: 1vw;
 	font-family: "news-gothic-std", sans-serif;
 	text-indent: 0;
 	text-transform: lowercase;
