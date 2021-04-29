@@ -1,0 +1,99 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
+.btn-wps,
+.btn-wps:hover,
+.btn-wps:focus,
+.btn-wps:active {
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -ms-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+.btn-wps {
+    padding: 10px 12px 10px !important;
+    display: inline-block !important;
+    line-height: 20px !important;
+    height: 40px !important;
+    position: relative;
+    box-shadow: none !important;
+    cursor: pointer;
+    font-weight: 600;
+    text-align: center;
+    text-decoration: none;
+    box-sizing: border-box;
+    outline: none;
+    text-shadow: none !important;
+    border-radius:3px;
+    margin-right:20px;
+}
+.btn-wps:last-child {
+    margin-right:0px;
+}
+.btn-wps.wps-reinit {
+    background: rgb(250, 121, 179) !important;
+    color: #fff !important;
+    border: 1px solid #176a8c;
+    box-shadow: 0px 2px 0px 0px #176a8c , 0px 2px 4px 0px #000 !important;
+  }
+  .btn-wps.wps-reinit:focus, 
+  .btn-wps.wps-reinit:hover {
+      color: #00a0d2 !important;
+      background: #fff !important;
+  }
+  .btn-wps.wps-reinit:active {
+      transform: translateY(2px);
+      -ms-transform:translateY(2px);
+      -webkit-transform:translateY(2px);
+      box-shadow: none !important;
+  }
+.btn-wps.wps-save {
+    background: #33414e !important;
+    color: #fff !important;
+    border: 1px solid #222b33;
+    box-shadow: 0px 2px 0px 0px #222b33 , 0px 2px 4px 0px #000 !important;
+    }
+    .btn-wps.wps-save:focus,
+    .btn-wps.wps-save:hover {
+        color: #33414e !important;
+        background: #fff !important;
+    }
+    .btn-wps.wps-save:active {
+        transform: translateY(2px);
+        -ms-transform:translateY(2px);
+        -webkit-transform:translateY(2px);
+        box-shadow: none !important;
+     }
+.btn-wps.wps-reset-lockouts {
+    background: #2dbb45 !important;
+    color: #fff !important;
+    border: 1px solid #039436;
+    box-shadow: 0px 2px 0px 0px #039436 , 0px 2px 4px 0px #000 !important;
+    }
+    .btn-wps.wps-reset-lockouts:focus,
+    .btn-wps.wps-reset-lockouts:hover {
+        color: #2dbb45 !important;
+        background: #fff !important;
+    }
+    .btn-wps.wps-reset-lockouts:active {
+        transform: translateY(2px);
+        -ms-transform:translateY(2px);
+        -webkit-transform:translateY(2px);
+        box-shadow: none !important;
+     }
+.btn-wps.wps-clear {
+    background: #dc3232 !important;
+    color: #fff !important;
+    border: 1px solid #a72525;
+    box-shadow: 0px 2px 0px 0px #a72525 , 0px 2px 4px 0px #000 !important;
+    }
+    .btn-wps.wps-clear:focus,
+    .btn-wps.wps-clear:hover {
+        color: #dc3232 !important;
+        background: #fff !important;
+    }
+    .btn-wps.wps-clear:active {
+        transform: translateY(2px);
+        -ms-transform:translateY(2px);
+        -webkit-transform:translateY(2px);
+        box-shadow: none !important;
+     }
