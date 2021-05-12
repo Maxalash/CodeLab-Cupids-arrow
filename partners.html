@@ -2,8 +2,65 @@
 <html>
 <head>
 	<title>	Partners</title>
+	<link rel="shortcut icon" type="image/png" href="images/Heart.png" />
+	<link rel="stylesheet" type="text/css" href="css/partners.css">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>	
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+  <script type="text/javascript"></script>
 </head>
 <body>
+<div id="main">
+	  <div class="friendline">
+	    <div class="headernamepart">
+	      <div class="friendicon"></div>
+	      <div class="friendname"><h2>Friend Name</h2></div>
+	    </div>
+	    <div class="chatdata">
+		    <div id="chatdatascroller"></div>
+		    <form class="messaging">
+		      <textarea  id="chatting1" name="chatting" class="chatting" placeholder="message..." ></textarea>
+		      <div class="sendmessage" ><img src="images/sentmessagecup.png" style="width:100%" onclick="sendmessage()"></div>
+		    </form>
+	    </div>
+	  </div>
+</div>
 
+	<script>
+	// -----------------togglers------------------
+	$(".headernamepart").click(function(){
+          $('.chatdata').slideToggle(500);
+      });
+      $("#navside1").click(function(){
+        $("#myfriends").hide();
+        $('#bodyofinfo').show();
+      });
+      $("#navside3").click(function(){
+        $("#bodyofinfo").hide();
+        $('#myfriends').show();
+      });
+      // --------------------functioons----------------
+      function createFriendElement(){
+    var main=document.createElement("div").className += "friendline";
+    var head=document.createElement("div").classname +="headernamepart";
+    var chat=document.createElement("div").className +="chatdata";
+    head.innerHTML=document.createElement("div").className +="friendname";
+    chat.innerHTML=document.createElement("div").className +="chatdatascroller";
+    main.innerHTML+=head;
+    main.innerHTML+=chat;
+    return main;
+	}
+	function sendmessage(){
+		var text = document.getElementById("chatting1").value;
+	  if(text!=""){
+	 var divka = document.createElement("div");
+	 divka.innerHTML=text;
+	 divka.setAttribute("class","sendedmessage")
+	 document.getElementById("chatdatascroller").appendChild(divka);
+		$(".chatting").val("");
+	  $("#chatting1").focus();
+	}
+	}
+	</script>
 </body>
 </html>
