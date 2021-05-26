@@ -7,7 +7,13 @@
 	-o-background-size: cover;
 	box-shadow:0 -300px 100px -100px white inset;
 }
-
+/* #signouticon, #personicon, # */
+#signouticon, #personicon{
+	display: none;
+}
+ul li{
+	display: inline;
+  }
 #main{
 	box-shadow:0 120px 30px -30px white inset;
 	height:100%;

@@ -1,9 +1,5 @@
-@import url('https://fonts.googleapis.com/css?family=Poppins');
-
-/* BASIC */
-
 html {
-  background-color: #56baed;
+  background-color: #ee99e7;
 }
 
 body {
@@ -12,7 +8,7 @@ body {
 }
 
 a {
-  color: #92badd;
+  color: #dd92dd;
   display:inline-block;
   text-decoration: none;
   font-weight: 400;
@@ -48,7 +44,7 @@ a.active {
   background: #fff;
   padding: 30px;
   width: 90%;
-  max-width: 450px;
+  max-width: 600px;
   position: relative;
   padding: 0px;
   text-decoration: none;
@@ -59,7 +55,7 @@ a.active {
 
 #formFooter {
   background-color: #f6f6f6;
-  border-top: 1px solid #dce8f1;
+  border-top: 1px solid #f1dcf0;
   padding: 25px;
   text-align: center;
   text-decoration: none;
@@ -80,15 +76,18 @@ a.inactive {
 a.active {
   color: #0d0d0d;
   transition:0.5s;
-  border-bottom: 2px solid #5fbae9;
+  border-bottom: 2px solid #e45fe9;
 }
 
-
+a:hover{
+ color:#e936e0;
+ text-decoration:none;
+}
 
 /* FORM TYPOGRAPHY*/
 
 input[type=button], input[type=submit], input[type=reset]  {
-  background-color: #56baed  ;
+  background-color: #e936e0  ;
   border: none;
   color: white;
   padding: 15px 80px;
@@ -97,8 +96,8 @@ input[type=button], input[type=submit], input[type=reset]  {
   display: inline-block;
   text-transform: uppercase;
   font-size: 13px;
-  -webkit-box-shadow: 0 10px 30px 0 rgba(95,186,233,0.4);
-  box-shadow: 0 10px 30px 0 rgba(95,186,233,0.4);
+  -webkit-box-shadow: 0 10px 30px 0 rgba(192, 59, 209, 0.4);
+  box-shadow: 0 10px 30px 0 rgba(192, 59, 209, 0.4);
   -webkit-border-radius: 5px 5px 5px 5px;
   border-radius: 5px 5px 5px 5px;
   margin: 5px 20px 40px 20px;
@@ -110,7 +109,7 @@ input[type=button], input[type=submit], input[type=reset]  {
 }
 
 input[type=button]:hover, input[type=submit]:hover, input[type=reset]:hover  {
-  background-color: #39ace7
+  background-color: #b420ad
 ;
 }
 
@@ -122,7 +121,10 @@ input[type=button]:active, input[type=submit]:active, input[type=reset]:active  
   transform: scale(0.95);
 }
 
-input[type=text] {
+input[type="text"], 
+#infoPart, 
+input[type="password"] {
+  box-sizing: border-box;
   background-color: #f6f6f6;
   border: none;
   color: #0d0d0d;
@@ -143,12 +145,14 @@ input[type=text] {
   border-radius: 5px 5px 5px 5px;
 }
 
-input[type=text]:focus {
+input[type="text"]:focus, 
+#infoPart,
+input[type="password"]:focus {
   background-color: #fff;
-  border-bottom: 2px solid #5fbae9;
+  border-bottom: 2px solid #e936e0;
 }
 
-input[type=text]:placeholder {
+input[type="text"]::placeholder,#infoPart::placeholder, input[type="password"]::placeholder {
   color: #cccccc;
 }
 
@@ -244,7 +248,7 @@ input[type=text]:placeholder {
   bottom: -10px;
   width: 0;
   height: 2px;
-  background-color: #56baed;
+  background-color: #e936e0;
   content: "";
   transition: width 0.2s;
 }

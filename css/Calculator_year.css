@@ -72,11 +72,12 @@ input:-webkit-autofill, input:-webkit-autofill:focus {
 	background: #FFF !important;
 	-webkit-text-fill-color: #7c7c7c;
 }
-
-div.button{
-	text-align: center;
-}
-div.button a{
+ div.button{
+ text-align: center;
+ }
+button{
+	 text-align: center;
+padding: 10vh;
 	background: white;
     color: black;
     text-transform: uppercase;
@@ -87,13 +88,26 @@ div.button a{
     font-size: 14px;
     transition: 0.5s;
 }
-div.button a:hover{
+button a{
+	padding: 10vh;
+	background: white;
+    color: black;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    padding: 13px 31px;
+    display: inline-block;
+    text-decoration: none;
+    font-size: 14px;
+    transition: 0.5s;
+}
+button:hover{
 	background: #7f7f7f;
 	color:white;
 	transition: 0.5s;
 }
 div.output{
-	display: none;
+	
+	transition: 1s;
 }
 div.output label{
 	background: none #42476a;
@@ -104,7 +118,7 @@ div.output label{
 	text-transform: uppercase;
 	font-size: 3vw;
 	font-size: 3vw;
-    padding: 20px 0;	
+   	
     transition: 1s;
 }
 @media only screen and (max-width: 767px) {
