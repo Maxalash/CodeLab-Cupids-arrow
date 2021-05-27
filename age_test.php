@@ -1,6 +1,7 @@
 <?php
 // Initialize the session
 session_start();
+$log = $_SESSION["username"];
  ?>
 
 
@@ -11,6 +12,7 @@ session_start();
 	<link rel="shortcut icon" type="image/png" href="images/Heart.png" />
 	<link rel="stylesheet" type="text/css" href="css/homepage.css">
 	<link rel="stylesheet" type="text/css" href="css/Buttons.css">
+	<link rel="stylesheet" type="text/css" href="css/loading-page.css">
 	<link rel="stylesheet" type="text/css" href="css/calculator_year.css">
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>	
@@ -20,11 +22,19 @@ function sh(){
 		document.getElementById("submit").style.display:'block';
 	}
 </script>
+
 	
 	
 </head>
 <body>
+<script>
+       
+		$(window).on("load",function(){
+		$(".wrap").fadeOut("slow")
+    })
 	
+        </script>
+		
 	<div id="header" style="background: url('images/cupidspaint.jpg') no-repeat center top fixed;">
 
 	</div>
@@ -208,7 +218,15 @@ function sh(){
 	else{
 	echo "You will be a great pair for a whole life";}
 	if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
-	$some = "SELECT `name` FROM `personal` WHERE `first_sign` = $result1 and `second_sigh` = $result2";
+	$some = "SELECT `id` FROM `personal` WHERE `year_sign` = '$yearsign1' and `username` = '$log'";
+	$sc = mysqli_query($con, $some,MYSQLI_STORE_RESULT);
+		$s = mysqli_fetch_array($sc);
+	if($s != NULL || $s !='0'){
+			$execute = "UPDATE `personal`
+  SET `year_sign` = '$yearsign1'
+  WHERE `username` = '$log';";
+  $con->query($execute);
+	}
 	}
 		}
 		
@@ -226,6 +244,14 @@ function sh(){
 	<div id="footer">
 		<center><h1>&copy;Cupid's arrow</h1></center>
 	</div>
+	
+	<div class = "wrap" >
+	<div class="rhombus2" >
+        <div class="circle21"></div>
+        <div class="circle22"></div>
+    </div>
+	</div>
+	
 <?php
 // Check if the user is already logged in, if yes then redirect him to welcome page
 if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){

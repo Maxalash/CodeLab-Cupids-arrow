@@ -14,6 +14,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 <head>
 	<title>Cupid's arrow</title>
 	<link rel="shortcut icon" type="image/png" href="images/Heart.png" />
+	<link rel="stylesheet" type="text/css" href="css/loading-page.css">
 	<link rel="stylesheet" type="text/css" href="css/personal.css">
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>	
@@ -23,6 +24,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 <body>
 	
 
+		
 	<div id="main">
     <nav id="navigation" class="navbar navbar-expand-lg navbar-light" style="background-color: white;">
       <div class="container-fluid">
@@ -79,6 +81,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 	<div id="footer">
 		<center><h1>&copy;Cupid's arrow</h1></center>
 	</div>
+
   <script>
 // --------------------menu toggle------------------------
     var ifra = true;
@@ -136,5 +139,18 @@ $("#menulist li").click(function() {
   }
 });
   </script>
+  <script>
+       
+		$(window).on("load",function(){
+		$(".wrap").fadeOut("slow")
+    })
+	
+        </script>
+	<div class = "wrap" >
+	<div class="rhombus2" >
+        <div class="circle21"></div>
+        <div class="circle22"></div>
+    </div>
+	</div>
 </body>
 </html>
