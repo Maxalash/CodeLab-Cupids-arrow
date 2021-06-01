@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 26, 2021 at 07:30 PM
+-- Generation Time: Jun 01, 2021 at 06:08 PM
 -- Server version: 10.4.18-MariaDB
 -- PHP Version: 8.0.5
 
@@ -66,10 +66,43 @@ CREATE TABLE `horoscope` (
 --
 
 CREATE TABLE `numerology` (
-  `first_num` varchar(24) DEFAULT NULL,
-  `second_num` varchar(24) DEFAULT NULL,
+  `first_num` int(3) DEFAULT NULL,
+  `second_num` int(3) DEFAULT NULL,
   `compatability` varchar(50) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `numerology`
+--
+
+INSERT INTO `numerology` (`first_num`, `second_num`, `compatability`) VALUES
+(1, 1, 'A good pair'),
+(1, 5, 'A good pair'),
+(1, 7, 'A good pair'),
+(2, 2, 'A good pair'),
+(2, 4, 'A good pair'),
+(2, 8, 'A good pair'),
+(3, 3, 'A good pair'),
+(3, 6, 'A good pair'),
+(3, 9, 'A good pair'),
+(4, 4, 'A good pair'),
+(4, 2, 'A good pair'),
+(4, 8, 'A good pair'),
+(5, 1, 'A good pair'),
+(5, 5, 'A good pair'),
+(5, 7, 'A good pair'),
+(6, 3, 'A good pair'),
+(6, 6, 'A good pair'),
+(6, 9, 'A good pair'),
+(7, 1, 'A good pair'),
+(7, 5, 'A good pair'),
+(7, 7, 'A good pair'),
+(8, 2, 'A good pair'),
+(8, 4, 'A good pair'),
+(8, 8, 'A good pair'),
+(9, 3, 'A good pair'),
+(9, 6, 'A good pair'),
+(9, 9, 'A good pair');
 
 -- --------------------------------------------------------
 
@@ -100,7 +133,7 @@ INSERT INTO `personal` (`id`, `username`, `password`, `name`, `surname`, `info`,
 (4, 'i', '$2y$10$4FVDIAESxb2v1M0UEH', 'i', 'i', 'i', 9, '2021-05-19', 'ox', 'bull'),
 (5, '1', '1111111', '1', '1', '1', 0, '2021-05-19', 'ox', 'bull'),
 (6, 'f', 'ffffff', 'f', 'f', 'f', 6, '2021-05-19', 'ox', 'bull'),
-(7, '123', '123123', '123', '123', '123', 0, '2021-05-23', 'ox', 'twins');
+(7, '123', '123123', '123', '123', '123', 0, '2021-05-23', '', 'twins');
 
 -- --------------------------------------------------------
 

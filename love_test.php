@@ -7,14 +7,13 @@ $log = $_SESSION["username"];
 <head>
 	<title>Cupid's arrow</title>
 	<link rel="shortcut icon" type="image/png" href="images/Heart.png" />
+	<link rel="stylesheet" type="text/css" href="css/love_test.css">
 	<link rel="stylesheet" type="text/css" href="css/homepage.css">
-	<link rel="stylesheet" type="text/css" href="css/Buttons.css">
 	<link rel="stylesheet" type="text/css" href="css/loading-page.css">
-	<link rel="stylesheet" type="text/css" href="css/calculator_year.css">
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>	
     <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
-
+		
 
 	
 	
@@ -76,35 +75,20 @@ $log = $_SESSION["username"];
       </ul>
   </div>
 </nav>
-
-	<div class = "calc">
-	<form action="" method="post">
-<div class="field pixel">
-		<label for="pixel">Your date of birth</label>
-		<input id="pixel" name="you"  type="number" min="0" class="m-pixel" placeholder="enter you date of birth year"/>		 
-	</div>
-	<div class="field pixel">
-		<label for="vpwidth">Partner's date of birth</label>
-		<input id="vpwidth" name="partner"  type="number" min="0" class="m-vpwidth" placeholder="enter your partner's date of birth year"/>		 
-	</div>
-	<div style = "text-align: center">
-	<button name = "Submit" value = "submit" type = "submit" id="submit">
-		Calculate compatibility
-	</button>
-	</form>
-	</div>
-	<div class = "output">
-		<label>
-		<?php 
-
-		if(isset($_POST['Submit'])){
-			$you = $_POST['you'];
-		$partner = $_POST['partner'];
+<div id="evaluating">
+<form action="" method="post">
+  <div id="namepart">
+    <input type="text" class="name1 heartname" id="name7" name="name1" placeholder="Your name">
+	<div class="output"><label><a class="r-link animated-underline animated-underline_type1 news__link">
+					
+	<?php 
+		
+		if(isset($_POST['submit'])){
+			$you = $_POST['name1'];
+		$partner = $_POST['name2'];
 		if((!$you && $you != '0') || (!$partner && $partner != '0')){
-		$error_pol = "Fill all dates";
-		echo "Fill all dates";
-		}else if($you < '2000' || $partner <'200'){
-			echo "This test is supposed for those who was born after 2000 year";
+		$error_pol = "Fill again";
+		echo "Fill again";
 		}else{
 	
 
@@ -114,121 +98,154 @@ $log = $_SESSION["username"];
   echo "Failed to connect to MySQL: " . mysqli_connect_error();
   }
 		
-		
-		$result1 = ($you-2000)%12;
-		$result2 = ($partner-2000)%12;
-		$yearsign2;
-		$yearsign1;
-		switch($result1){
-        case 0:
-            $yearsign1="dragon";
-            break;
-        case 1:
-            $yearsign1="snake";
-            break;
-        case 2:
-            $yearsign1="horse";
-            break;
-        case 3:
-            $yearsign1="sheep";
-            break;
-        case 4:
-            $yearsign1="monkey";
-            break;
-        case 5:
-            $yearsign1="rooster";
-            break;
-        case 6:
-            $yearsign1="dog";
-            break;
-        case 7:
-            $yearsign1="pig";
-            break;
-        case 8:
-            $yearsign1="rat";
-            break;
-        case 9:
-            $yearsign1="ox";
-            break;
-        case 10:
-            $yearsign1="tiger";
-            break;
-        case 11:
-            $yearsign1="rabbit";
-            break;
-			 default:
-            echo "Oops! Something went wrong. Please try again later.";
-    }
-	switch($result2){
-        case 0:
-            $yearsign2="dragon";
-            break;
-        case 1:
-            $yearsign2="snake";
-            break;
-        case 2:
-            $yearsign2="horse";
-            break;
-        case 3:
-            $yearsign2="sheep";
-            break;
-        case 4:
-            $yearsign2="monkey";
-            break;
-        case 5:
-            $yearsign2="rooster";
-            break;
-        case 6:
-            $yearsign2="dog";
-            break;
-        case 7:
-            $yearsign2="pig";
-            break;
-        case 8:
-            $yearsign2="rat";
-            break;
-        case 9:
-            $yearsign2="ox";
-            break;
-        case 10:
-            $yearsign2="tiger";
-            break;
-        case 11:
-            $yearsign2="rabbit";
-            break;
-			 default:
-            echo "Oops! Something went wrong. Please try again later.";
-    }
-		$sql = "SELECT `compatability` FROM `year_sign` WHERE `first_sign` = '$yearsign1' and `second_sigh` = '$yearsign2'";
+		$s_you=str_split($you);
+		$s_partner = str_split($partner);
+		$num1=0;
+		$num2=0;
+		for ($i=0;$i<count($s_you);$i++){
+			switch($s_you[$i]){
+				case "A":
+				case "a":
+				case "J":
+				case "j":
+				case "S":
+				case "s": $num1+=1; break;
+				case "b":
+				case "B":
+				case "k":
+				case "K":
+				case "T":
+				case "t": $num1+=2;break; 
+				case "c":
+				case "C":
+				case "L":
+				case "l":
+				case "U":
+				case "u": $num1+=3;break;
+				case "d":
+				case "D":
+				case "m":
+				case "M":
+				case "v":
+				case "V": $num1+=4;break;
+				case "e":
+				case "E":
+				case "N":
+				case "n": 
+				case "w":
+				case "W": $num1+=5;break;
+				case "f":
+				case "F":
+				case "o":
+				case "O":
+				case "x":
+				case "X": $num1+=6;break;
+				case "g":
+				case "G":
+				case "p":
+				case "P":
+				case "y":
+				case "Y": $num1+=7;break;
+				case "h":
+				case "H":
+				case "q":
+				case "Q":
+				case "z":
+				case "Z": $num1+=8;break;
+				case "i":
+				case "I":
+				case "r":
+				case "R": $num1+=9;break;
+			}
+		}
+		for ($i=0;$i<count($s_partner);$i++){
+			switch($s_partner[$i]){
+				case "A":
+				case "a":
+				case "J":
+				case "j":
+				case "S":
+				case "s": $num2+=1; break;
+				case "b":
+				case "B":
+				case "k":
+				case "K":
+				case "T":
+				case "t": $num2+=2;break; 
+				case "c":
+				case "C":
+				case "L":
+				case "l":
+				case "U":
+				case "u": $num2+=3;break;
+				case "d":
+				case "D":
+				case "m":
+				case "M":
+				case "v":
+				case "V": $num2+=4;break;
+				case "e":
+				case "E":
+				case "N":
+				case "n": 
+				case "w":
+				case "W": $num2+=5;break;
+				case "f":
+				case "F":
+				case "o":
+				case "O":
+				case "x":
+				case "X": $num2+=6;break;
+				case "g":
+				case "G":
+				case "p":
+				case "P":
+				case "y":
+				case "Y": $num2+=7;break;
+				case "h":
+				case "H":
+				case "q":
+				case "Q":
+				case "z":
+				case "Z": $num2+=8;break;
+				case "i":
+				case "I":
+				case "r":
+				case "R": $num2+=9;break;
+			}
+		}
+		$sql = "SELECT `compatability` FROM `numerology` WHERE `first_num` = '$num1' and `second_num` = '$num2'";
 		$r = mysqli_query($con, $sql,MYSQLI_STORE_RESULT);
 		$c = mysqli_fetch_array($r);
 			
 		
 		if(!isset($error_pol)){
     if($c == NULL || $c == '0'){
-	echo "You can try, but it is not recomended";}
+		$r = rand(0,50);
+	echo $r,"%";}
 	else{
-	echo "You will be a great pair for a whole life";}
-	if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
-	$some = "SELECT `id` FROM `personal` WHERE `year_sign` = '$yearsign1' and `username` = '$log'";
-	$sc = mysqli_query($con, $some,MYSQLI_STORE_RESULT);
-		$s = mysqli_fetch_array($sc);
-	if($s != NULL || $s !='0'){
-			$execute = "UPDATE `personal`
-  SET `year_sign` = '$yearsign1'
-  WHERE `username` = '$log';";
-  $con->query($execute);
-	}
-	}
+		$r = rand(0,50);
+	echo $r,"%";}
+	
 		}
 		
 		else{echo "$error_pol";}
 		}
 		}
-		?>
-		</label>
-		</div>
-	</div>
+		?></a></label></div>
+	
+    <input type="text" class="name1 heartname" id="name8" name="name2" placeholder="Your crush name:)">
+  </div>
+
+    <div id="heartev">
+      
+	  
+    
+	<button id="heartness" type = "submit" name="submit" style="border: 0; background: transparent" ><img id="heartimg" src="images/Heart.png" style="width: 100%; transition:0.5s"></div>
+    </div>
+	</form>
+</div>
+	
 	</div>
 	
 

@@ -1,0 +1,248 @@
+
+  #maining{
+    margin:5% 5% 0 5%;
+    background-color: rgb(249, 200, 222);
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+  }
+ 
+  #logotype{
+    left:20px;
+        height:60px;
+  }
+  .icon img{
+    width:20%;
+    float: left;
+  }
+ 
+        .login{
+          width: 500px;
+          background-color: rgb(255,20,147);
+          border-radius: 50px;
+          margin:20px auto;
+          padding:20px 0;
+          display: none;
+          font-family: blackadder ITC;
+        }
+        .name1, .name2{
+          display: flex;
+          font-family: Tempus Sans ITC;
+          width: 80%;
+          padding:2px 10px;
+          border-radius: 10px;
+          border-style: none;
+          margin:0 auto;
+          font-size: 20px;
+          box-sizing: border-box;
+        }
+        .submit{
+          display: flex;
+          font-family: Tempus Sans ITC;
+          font-size: 50px;
+          padding: 8px 20px;
+          width: 200px;
+          height: 70px;
+          text-align: center;
+          border-radius: 20px;
+          outline: none;
+          border: 0;
+          background-color:#fdc3f7;
+          color: #f585ed;
+          margin:0 auto 0 auto;
+        }
+        .submit:hover{
+          opacity: 0.8;
+        } 
+ 
+
+
+#evaluating{position: relative;
+  width:  70%;
+  height:700px;
+  margin:20px auto;
+}
+#namepart{position: absolute;
+  width:100%;
+  box-sizing: border-box;
+  height:40px;
+  margin-bottom: 10px;
+  z-index: 0;
+  display: flex;
+  position: relative;
+}
+
+#heartev{
+  position:relative;
+  width: 50%;
+  box-sizing: border-box;  
+  height:550px;
+  margin:50px auto;
+
+  position: relative;
+}
+#heartness{
+  position: relative;
+  width:100%;
+  margin:0 auto;
+
+}
+#rating{
+  position: absolute;
+  margin:120px auto;
+  width:100%;
+  text-align: center;
+  font-size: 150px;
+  color: white;
+  font-weight: 1000;
+  z-index: 2;
+  display: none;
+}
+.ratingvals{
+  display: inline-block;
+}
+.heartname{
+  position: relative;
+  width:35%;
+  display: inline-block;
+}
+#name7{
+  left:0;
+}
+#name8{
+  right:0;
+}
+#okbutton{
+  position:absolute;
+  margin:0 auto;
+  border-radius: 70px;
+  width: 100%;
+  z-index: 2;
+  bottom: 0;
+  display: none;
+  background-color: yellow;
+} 
+#okbutton img:hover, #heartness:hover{
+  opacity: 0.8;
+}
+div.output{
+	transition: 1s;
+}
+div.output label{
+	background-color: none;
+        
+	width: 100%;
+	display: absolute;	
+        
+	text-align: center;
+	text-transform: uppercase;
+	font-size: 3vw;
+   	
+    transition: 1s;
+}
+
+@import url('https://fonts.googleapis.com/css?family=Amaranth:700,400&display=swap');
+
+:root{
+	--mainColor: #673AB7;
+	--accentColor: #ff7eb2;
+	--accentColorDark: #f15493;
+	--blackColor: #222;
+	--whiteColor: #fff;
+	--rLinkTextColor: var(--blackColor);
+}	
+
+
+.r-link{
+	--uirLinkDisplay: var(--rLinkDisplay, inline-block);
+	--uirLinkTextColor: var(--rLinkTextColor);
+	--uirLinkTextDecoration: var(--rLinkTextDecoration, none);
+	border-radius:10px;
+	display: var(--uirLinkDisplay) !important;
+	color: var(--uirLinkTextColor) !important;
+	text-decoration: var(--uirLinkTextDecoration) !important;
+}
+
+
+.r-title{
+	--uirTitleMarginTop: var(--rTitleMarginTop, 0);
+	--uirTitleMarginBottom: var(--rTitleMarginBottom, 0);
+
+	margin-top: var(--uirTitleMarginTop) !important;
+	margin-bottom: var(--uirTitleMarginBottom) !important;
+}
+
+
+.animated-underline{
+	--uiAnimatedUnderlineWidth: var(--animatedUnderlineWidth, 100%);
+	--uiAnimatedUnderlineHeight: var(--animatedUnderlineHeight, 2px);
+	--uiAnimatedUnderlineBgColor: var(--animatedUnderlineBgColor, currentColor);
+	--uiAnimatedUnderlinePositionX: var(--animatedUnderlinePositionX, left);
+	--uiAnimatedUnderlinePositionY: var(--animatedUnderlinePositionY, bottom);
+
+	/*
+		1. For multi-line animated underline the "inline" value for the display property is compulsory.
+		2. Adds opportunity to create multi-line padding
+	*/
+
+	--rLinkDisplay: inline; /* 1 */
+
+	background-image: linear-gradient(0, var(--uiAnimatedUnderlineBgColor) 0, var(--uiAnimatedUnderlineBgColor));
+	background-size: var(--uiAnimatedUnderlineWidth) var(--uiAnimatedUnderlineHeight);
+	background-position: var(--uiAnimatedUnderlinePositionX) var(--uiAnimatedUnderlinePositionY);
+	background-repeat: no-repeat;
+	
+	-webkit-box-decoration-break: clone; /* 2 */
+	box-decoration-break: clone; /* 2 */
+	
+	will-change: background-size;
+	transition: background-size .25s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+}
+
+
+
+:root{
+	--animatedUnderlineHeight: 1rem;
+	--animatedUnderlineBgColor: var(--accentColor);
+}	
+
+.animated-underline_type1{
+	--animatedUnderlineWidth: 100%;
+}
+
+.animated-underline_type1:hover{
+	--animatedUnderlineHeight: 100%;
+}
+
+.animated-underline_type2{
+	--animatedUnderlineWidth: 100%;
+}
+
+.animated-underline_type2:hover{
+	--animatedUnderlineWidth: 0;
+}
+
+.animated-underline_type3{
+	--animatedUnderlineHeight: 0;
+}
+
+.animated-underline_type3:hover{
+	--animatedUnderlineHeight: 100%;
+}
+
+.animated-underline_type4{
+	--animatedUnderlineWidth: 0;
+}
+
+.animated-underline_type4:hover{
+	--animatedUnderlineWidth: 100%;
+}
+
+.animated-underline_type5{
+	--animatedUnderlineWidth: 100%;
+	--animatedUnderlineHeight: 5px;
+	--animatedUnderlinePositionY: 90%;
+}
+
+.animated-underline_type5:hover{
+	--animatedUnderlineHeight: 1rem;
+}
