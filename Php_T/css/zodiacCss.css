@@ -1,0 +1,126 @@
+.select{
+    position: relative;
+}
+.zodiac{
+    justify-content: center;
+    display: grid;
+    text-align: center;
+    box-shadow: 0 -10px 20px white;
+	margin: 0 auto;
+	padding: 6vh;
+	max-width: 80%;
+	background-color: #D0D0D0;
+	border-radius: 20px;
+}
+select{
+    font-size: 1.5rem;
+    padding: 1em 16rem 1em 1.5rem;
+    background: #ff1493;
+    color: white;
+}
+.arrow{
+    top: 0;
+    right: 0;
+    position: absolute;
+    display: block;
+    background: #3b3c47;
+    height: 100%;
+    width: 2rem;
+    pointer-events: none;
+}
+.arrow::before,
+.arrow::after{
+    --size: 0.5em;
+
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 0;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.arrow::before{
+    border-left: var(--size)  solid transparent;
+    border-right: var(--size)  solid transparent;
+    border-bottom: var(--size)  solid rgba(255,255,255, 0.5);
+    top: 35%;
+}
+.arrow::after{
+    border-left: var(--size)  solid transparent;
+    border-right: var(--size)  solid transparent;
+    border-top: var(--size)  solid rgba(255,255,255, 0.5);;
+    top: 65%;
+}
+.button{
+    color: #FE53BB;
+    position: relative;
+    display: inline-block;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-size: 24px;
+    letter-spacing: 4px;
+    overflow: hidden;
+    padding: 15px 30px;
+    margin-top: 10%;
+    margin-bottom: 5%;
+    transition: 0.2s;
+}
+.button_line{
+    position: absolute;
+    display: block;
+}
+.button_line-top{
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 2px;
+    background:linear-gradient(90deg,transparent,#FE53BB);
+}
+.button:hover .button_line-top{
+    left: 100%;
+    transition: 1s;
+    transition-delay: 0.25s;
+}
+.button_line-bottom{
+    bottom: 0;
+    right: -100%;
+    width: 100%;
+    height: 2px;
+    background:linear-gradient(270deg,transparent,#FE53BB);
+}
+.button:hover .button_line-bottom{
+    right: 100%;
+    transition: 1s;
+    transition-delay: 0.25s;
+}
+.button_line-left{
+    bottom: -100%;
+    left: 0;
+    width: 2px;
+    height: 100%;
+    background:linear-gradient(0deg,transparent,#FE53BB);
+  
+}
+.button:hover .button_line-left{
+    bottom: 100%;
+    transition: 1s;
+    transition-delay: 0s;
+}
+.button_line-right{
+    top: -100%;
+    right: 0;
+    width: 2px;
+    height: 100%;
+    background:linear-gradient(180deg,transparent,#FE53BB);
+}
+.button:hover .button_line-right{
+    top: 100%;
+    transition: 1s;
+    transition-delay: 0s;
+}
+.button:hover{
+    box-shadow: 0 0 10px #FE53BB, 0 0 40px #FE53BB, 0 0 80px #FE53BB ;
+    background-color: #FE53BB;
+    transition-delay: 1s;
+    color: #333;
+}
