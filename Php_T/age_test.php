@@ -1,6 +1,4 @@
-<?php
-  session_start();
-?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -209,7 +207,7 @@
 	else{
 	echo "You will be a great pair for a whole life";}
 	if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
-	$some = "SELECT `id` FROM `personal` WHERE `year_sign` = '$yearsign1' and `username` = '$log'";
+	$some = "SELECT `id` FROM `personal` WHERE `year_sign` = '$yearsign1' and `username` = '$yearsign2'";
 	$sc = mysqli_query($con, $some,MYSQLI_STORE_RESULT);
 		$s = mysqli_fetch_array($sc);
 	if($s != NULL || $s !='0'){
@@ -245,8 +243,9 @@
 	
 <?php
 // Check if the user is already logged in, if yes then redirect him to welcome page
+session_start();
 if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
-	$log = $_SESSION["username"];  
+	  $log = $_SESSION["username"];  
   ?>
     <script>
         $("#loginicon, #registericon, #signouticon, #personicon").toggle();

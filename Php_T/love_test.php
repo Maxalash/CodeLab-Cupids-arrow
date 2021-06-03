@@ -1,7 +1,3 @@
-<?php
-session_start();
-?>
-
 
 <!DOCTYPE html>
 <html>
@@ -266,9 +262,9 @@ session_start();
 	
 <?php
 // Check if the user is already logged in, if yes then redirect him to welcome page
-
-if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
-	$log = $_SESSION["username"];  
+session_start();
+if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === false){
+	  $log = $_SESSION["username"];  
   ?>
     <script>
         $("#loginicon, #registericon, #signouticon, #personicon").toggle();
@@ -276,7 +272,6 @@ if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
     <?php
     exit;
 }
-
 ?>
 </body>
 </html>
