@@ -1,6 +1,5 @@
 <?php
-session_start();
-$log = $_SESSION["username"];  
+  session_start();
 ?>
 <!DOCTYPE html>
 <html>
@@ -68,7 +67,7 @@ $log = $_SESSION["username"];
           <a class="btn-wps wps-reinit" href="register.php">Register</a>
         </li>
         <li id="signouticon" class="nav-item">
-        <a href="logout.php" class="nav-link active">Sign Out</a>
+        <a href="logout.php" class="btn-wps wps-reinit" style ="margin-top:15px">Sign Out</a>
         </li>
         <li id="personicon" class="nav-item">
         <a href="personal.php" class="nav-link active"><img src="images/cudidsid.png" alt="Account" width="20%" height=width></a>
@@ -76,7 +75,7 @@ $log = $_SESSION["username"];
       </ul>
   </div>
 </nav>
-
+<br>
 	<div class = "calc">
 	<form action="" method="post">
 <div class="field pixel">
@@ -247,6 +246,7 @@ $log = $_SESSION["username"];
 <?php
 // Check if the user is already logged in, if yes then redirect him to welcome page
 if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
+	$log = $_SESSION["username"];  
   ?>
     <script>
         $("#loginicon, #registericon, #signouticon, #personicon").toggle();

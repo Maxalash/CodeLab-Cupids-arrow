@@ -111,6 +111,7 @@ div.output{
 }
 div.output label{
 	background: none #42476a;
+	border-radius: 10px;
 	width: 100%;
 	display: block;	
 	margin: 20px 0;

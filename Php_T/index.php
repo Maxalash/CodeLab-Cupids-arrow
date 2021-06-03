@@ -13,6 +13,7 @@ session_start();
 	<title>Cupid's arrow</title>
 	<link rel="shortcut icon" type="image/png" href="images/Heart.png" />
 	<link rel="stylesheet" type="text/css" href="css/homepage.css">
+	<link rel="stylesheet" type="text/css" href="css/Buttons.css">
 	<link rel="stylesheet" type="text/css" href="css/loading-page.css">
 	
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
@@ -70,7 +71,7 @@ session_start();
           <a class="btn-wps wps-reinit" href="register.php">Register</a>
         </li>
         <li id="signouticon" class="nav-item">
-        <a href="logout.php" class="nav-link active">Sign Out</a>
+        <a href="logout.php" class="btn-wps wps-reinit" style ="margin-top:15px">Sign Out</a>
         </li>
         <li id="personicon" class="nav-item">
         <a href="personal.php" class="nav-link active"><img src="images/cudidsid.png" alt="Account" width="20%" height=width></a>
