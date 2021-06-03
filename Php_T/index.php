@@ -296,7 +296,6 @@ session_start();
 // Check if the user is already logged in, if yes then redirect him to welcome page
 session_start();
 if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
-	  $log = $_SESSION["username"];  
   ?>
     <script>
         $("#loginicon, #registericon, #signouticon, #personicon").toggle();
